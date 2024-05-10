@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:unplash/bottom_navigation_bar.dart';
 import 'package:unplash/homepage.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       designSize: Size(375, 812),  // 设计稿的尺寸
       builder: (context, _) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomePageWidget(),
+        home: BottomNavigationBarWidget(),
       ),
     );
   }
