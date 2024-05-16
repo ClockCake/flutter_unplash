@@ -37,6 +37,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
             icon: Icon(Icons.person),
             label: 'Profile',
           ),
+
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],

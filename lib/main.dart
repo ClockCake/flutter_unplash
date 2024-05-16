@@ -17,6 +17,11 @@ class MyApp extends StatelessWidget {
       designSize: Size(375, 812),  // 设计稿的尺寸
       builder: (context, _) => MaterialApp(
         debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          highlightColor: Colors.transparent,
+          splashColor: Colors.transparent,
+        ),
         home: BottomNavigationBarWidget(),
       ),
     );
