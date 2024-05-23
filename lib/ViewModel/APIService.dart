@@ -5,14 +5,14 @@ import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:unplash/Model/photo.dart';
 
-class UserService {
+class APIService {
   final Dio _dio;
 
-  UserService() : _dio = Dio() {
+  APIService() : _dio = Dio() {
     _dio.options.baseUrl = 'https://api.unsplash.com';
     _dio.options.headers = {
       'Authorization': 'Client-ID pv2GD11irotOA7TF3RwjD6qHgb35H7AI8LTtKRtBPrE',
-      HttpHeaders.hostHeader: 'api.unsplash.com'  // 显式设置Host头
+      // HttpHeaders.hostHeader: 'api.unsplash.com'  // 显式设置Host头
     };
 
         // 配置代理和忽略证书错误
@@ -52,6 +52,21 @@ class UserService {
     try {
       final response = await _dio.get('/photos/random');
       return PhotoModel.fromJson(response.data);
+    } catch (error) {
+      throw Exception('Failed to load Photos ');
+    }
+  }
+
+  //Get a single page of photo results for a query.
+
+  Future<List<PhotoModel>> fetchPhotosByQuery(String query) async {
+    try {
+      final response = await _dio.get('/search/photos', queryParameters: {
+        'query': query,
+        'per_page': 25,
+        'page': 1,
+      });
+      return (response.data['results'] as List).map((json) => PhotoModel.fromJson(json)).toList();
     } catch (error) {
       throw Exception('Failed to load Photos ');
     }

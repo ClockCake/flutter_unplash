@@ -12,6 +12,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
   final List<Widget> _widgetOptions = <Widget>[
     HomePageWidget(),
     Text('Index 2: Profile'),
+
   ];
 
   void _onItemTapped(int index) {
@@ -30,8 +31,8 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(Icons.photo),
+            label: 'Discover',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
@@ -40,7 +41,9 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
 
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey,
+        backgroundColor: Colors.black.withOpacity(0.9),
         onTap: _onItemTapped,
       ),
     );

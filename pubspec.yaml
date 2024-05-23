@@ -38,9 +38,9 @@ dependencies:
   pull_to_refresh: ^2.0.0 # Pull to refresh
   dio: ^5.4.3+1 # Http request
   flutter_screenutil: ^5.9.0 # Screen util
-  path_provider: ^2.0.9
-
-
+  path_provider: ^2.0.9  # Path provider
+  flutter_tab_indicator_styler: ^2.0.0 # Tab indicator
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -64,8 +64,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - assets/data/data.json
+  # assets:
+  #   - assets/data/data.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
